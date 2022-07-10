@@ -249,3 +249,6 @@ colors:addColorPicker(theme, color, function(color3)
 venyx:setTheme(theme, color3)
 end)
 end
+
+-- load
+venyx:SelectPage(venyx.pages[1], true)
