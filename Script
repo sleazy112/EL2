@@ -17,6 +17,30 @@ TextColor = Color3.fromRGB(255, 255, 255)
 local page = venyx:addPage("Main", 5012544693)
 local section2 = page:addSection("main")
 
+section2:addToggle("trinket pickup", nil, function(value)
+    if value then
+        local plr = game.Players.LocalPlayer.Character.HumanoidRootPart
+            for i, v in pairs(workspace.MouseIgnore:GetChildren()) do
+                if v:IsA("Model") and v.Name ~= "Entity" then
+                    for _, g in pairs(v:GetDescendants()) do
+                        if g:IsA("ClickDetector") then
+                            if (plr.Position - g.Parent.Position).Magnitude <=18 then
+                                fireclickdetector(g)
+                            end
+                        end
+                    end
+                end
+                if workspace:FindFirstChild("Stuff") then
+                    workspace.Stuff:Destroy()
+                end
+            end
+        end
+    else
+        print("stopped")
+    end
+end)
+
+
 section2:addButton("Sell all", function()
     game:GetService("ReplicatedStorage").BulkSell:FireServer(1)
 end)
@@ -203,7 +227,11 @@ section5:addButton("click to copy v3rm account", function()
     setclipboard("https://v3rmillion.net/member.php?action=profile&uid=1195801")
 end)
 
-section5:addButton("Shoutout to budderattack550 for the idea for kill bricks", function()
+section5:addButton("Shoutout to budderattack550 for trinket pickup", function()
+    setclipboard("https://v3rmillion.net/member.php?action=profile&uid=76541")
+end)
+
+section5:addButton("also credit budderattack550 for the idea for kill bricks", function()
     setclipboard("https://v3rmillion.net/member.php?action=profile&uid=76541")
 end)
 
