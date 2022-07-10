@@ -27,7 +27,7 @@ end
 end
 end)
 
-section2:addButton("Inf mana", function()
+section2:addButton("Inf mana run", function()
     game:GetService("Workspace").Alive[game.Players.LocalPlayer.Name].Stats.Mana.Value = 100
 end)
 
@@ -41,13 +41,7 @@ section2:addButton("race reroll", function()
     fireclickdetector(game:GetService("Workspace").Map.Eth.Reroller2.ClickDetector)
 end)
 
-section2:addButton("Full bright", function()
-	Lighting.Brightness = 2
-	Lighting.ClockTime = 14
-	Lighting.FogEnd = 100000
-	Lighting.GlobalShadows = false
-	Lighting.OutdoorAmbient = Color3.fromRGB(128, 128, 128)
-end)
+
 
 local page = venyx:addPage("Esp", 5012544693)
 local section11 = page:addSection("settings")
